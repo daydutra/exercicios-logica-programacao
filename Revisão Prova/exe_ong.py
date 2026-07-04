@@ -5,6 +5,14 @@ Autor(a): Dayane
 Contato: dayane@gmail.com
 '''
 
+CODIGO_AVE = 1
+CODIGO_REPTIL = 2
+CODIGO_PEQUENO_MAMIFERO = 3
+CODIGO_ONCA_PARDA = 4
+CODIGO_URGENCIA_BAIXO = 1
+CODIGO_URGENCIA_MEDIO = 2
+CODIGO_URGENCIA_ALTO = 3
+PRIMEIRA_OCORRENCIA_REGISTRADA = 1
 total_carlos = 0
 total_amanda = 0
 total_renato = 0
@@ -19,31 +27,31 @@ total_alto = 0
 print('1 - Ave\n2 - Réptil\n3 - Pequeno Mamífero\n4 - Onça-Parda\nOutro Valor - Encerrar Programa\n')
 tipo_animal = int(input('Digite o código referente ao tipo de animal a ser resgatado: '))
 
-while tipo_animal >= 1 and tipo_animal <= 4:
+while tipo_animal >= CODIGO_AVE and tipo_animal <= CODIGO_ONCA_PARDA:
 
-    if tipo_animal == 1:
+    if tipo_animal == CODIGO_AVE:
         total_ave += 1
-    elif tipo_animal == 2:
+    elif tipo_animal == CODIGO_REPTIL:
         total_reptil += 1
-    elif tipo_animal == 3:
+    elif tipo_animal == CODIGO_PEQUENO_MAMIFERO:
         total_pequeno_mamifero += 1
     else:
         total_onca_parda += 1
         total_alto += 1
         total_renato += 1
 
-    if tipo_animal != 4:
+    if tipo_animal != CODIGO_ONCA_PARDA:
         print('1 - Baixo\n2 - Médio\n3 - Alto\n')
         nivel_urgencia = int(input('Digite o código referente ao nível de urgência do atendimento: '))
         
-        while nivel_urgencia < 1 or nivel_urgencia > 3:
+        while nivel_urgencia < CODIGO_URGENCIA_BAIXO or nivel_urgencia > CODIGO_URGENCIA_ALTO:
             print('Cógido inválido. Forneça um número dentre as opções disponíveis.')
             print('1 - Baixo\n2 - Médio\n3 - Alto\n')
             nivel_urgencia = int(input('Digite o código referente ao nível de urgência do atendimento: '))
     
-        if nivel_urgencia == 1:
+        if nivel_urgencia == CODIGO_URGENCIA_BAIXO:
             total_baixo += 1
-        elif nivel_urgencia == 2:
+        elif nivel_urgencia == CODIGO_URGENCIA_MEDIO:
             total_medio += 1
         else:
             total_alto += 1
@@ -62,7 +70,7 @@ while tipo_animal >= 1 and tipo_animal <= 4:
     print('1 - Ave\n2 - Réptil\n3 - Pequeno Mamífero\n4 - Onça-Parda\nOutro Valor - Encerrar Programa\n')
     tipo_animal = int(input('Digite o código referente ao tipo de animal: '))
 
-if total_carlos >= 1 or total_amanda >= 1 or total_renato >= 1:
+if total_carlos >= PRIMEIRA_OCORRENCIA_REGISTRADA or total_amanda >= PRIMEIRA_OCORRENCIA_REGISTRADA or total_renato >= PRIMEIRA_OCORRENCIA_REGISTRADA:
     print(f'\n----- RELATÓRIO FINAL -----\n')
     print(f'Total de Ocorrências - Tipo de Animal\nAve: {total_ave}\nRéptil: {total_reptil}\nPequeno Mamífero: {total_pequeno_mamifero}\nOnça-Parda: {total_onca_parda}\n')
     print(f'Total de Ocorrências - Nível de Urgência\nBaixo: {total_baixo}\nMédio: {total_medio}\nAlto: {total_alto}')
