@@ -1,8 +1,8 @@
 '''
 Sistema de Triagem do Centro de Resgate Ambiental
-Autor(a): Dayane
-Última Modificação: 03/07/2026
-Contato: dayane@gmail.com
+Autor(a): Dayane Dutra
+Última Modificação: 04/07/2026
+Contato: dutra007@proton.me
 '''
 
 CODIGO_AVE = 1
