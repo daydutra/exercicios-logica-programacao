@@ -49,3 +49,77 @@ Este repositório contém a resolução dos exercícios práticos passados pelo 
 - **Estruturas Condicionais Aninhadas:** Aplicação eficiente de `if`, `elif` e `else` para tomada de decisões baseadas nas regras de negócio da ONG.
 - **Estruturas de Repetição (Laços):** Uso de loops `while` para gerenciar o fluxo principal do sistema e garantir a validação rigorosa de dados de entrada.
 - **Lógica de Distribuição e Balanceamento:** Algoritmo de comparação para identificar o menor valor acumulado e realizar o balanceamento de tarefas entre os veterinários plantonistas.
+
+---
+
+## 📑 Exercício: Sistema de Orçamento de Planos de Saúde
+
+**Enunciado:**
+>A plataforma "LifeCompare" é um sistema web que ajuda usuários a simular e comparar o valor de planos de saúde de duas grandes operadoras parceiras: VITA Saúde e OMEGA Seguros. Você foi contratada para desenvolver o motor de cálculo desse sistema em Python.
+>
+>Dados de Entrada Esperados por Cliente:
+>(O sistema deve ser capaz de processar vários clientes em um laço de repetição)
+>
+>Sexo: (1 – Feminino, 2 – Masculino; qualquer outro valor encerra o programa).
+>
+>Idade: (Deve estar entre 18 e 80 anos; caso contrário, o programa deve exibir uma mensagem de erro e exigir que o usuário digite uma idade válida antes de continuar).
+>
+>Renda Mensal do Cliente: (Mínimo de R$ 2.000,00; caso seja menor, exibir erro e pedir para digitar novamente).
+>
+>Anos de Contribuição: Tempo em anos que o cliente já possui outra apólice com a plataforma (valor inteiro >= 0).
+>
+>Histórico de Internações: Número de internações hospitalares nos últimos 3 anos (valor inteiro >= 0).
+>
+>Detalhamento das Regras de Negócio
+>VITA SAÚDE:
+>Valor Base: 10% da renda mensal do cliente.
+>
+>Ajuste por Idade (Atenção aos Limites!):
+>Menor que 30 anos: acréscimo de 2% por ano abaixo dos 30 anos, até um máximo de 16% de acréscimo. (Se o cálculo ultrapassar 16%, o programa deve limitar o acréscimo em 16%).
+>
+>Maior que 50 anos: desconto de 1% por ano acima dos 50 anos, até o limite de 15% de desconto. (Se o cálculo ultrapassar 15%, o programa deve limitar o desconto em 15%).
+>
+>Anos de Contribuição (Fidelidade):
+>Clientes com mais de 3 anos de contribuição recebem 5% de desconto no valor final do plano.
+>
+>Histórico de Internações:
+>Se o cliente tiver mais de 2 internações, aplica-se um acréscimo de 20% sobre o valor do plano (aplicado após os descontos e acréscimos anteriores).
+>
+>OMEGA SEGUROS:
+>Valor Base: 12% da renda mensal do cliente.
+>
+>Descontos Acumulados (aplicados juntos diretamente sobre o Valor Base):
+>Sexo Feminino: 5% de desconto.
+>
+>Idade >= 30 anos: desconto adicional de 10%.
+>
+>Fidelidade: 3% de desconto por ano de contribuição do cliente, até no máximo 15% de desconto.
+>
+>Nota: Todos os descontos acima da OMEGA são somados e aplicados de uma vez sobre o valor base.
+>
+>Histórico de Internações:
+>0 internações: bônus (desconto) de 10% aplicado sobre o valor final do plano.
+>
+>1 ou 2 internações: valor normal (sem bônus e sem penalidade).
+>
+>3 ou mais internações: o cliente torna-se inelegível para contratar a OMEGA Seguros.
+>
+>Funcionamento do Sistema e Saídas:
+>Para cada cliente processado:
+>Exibir o valor final do plano calculado para a VITA Saúde.
+>
+>Exibir o valor final do plano para a OMEGA Seguros (ou exibir a mensagem "INELEGÍVEL", caso ele tenha 3 ou mais internações).
+>
+>Relatório Final (Exibido assim que um código de sexo inválido for digitado):
+>Número total de clientes processados com sucesso;
+>
+>Quantidade de clientes que foram considerados inelegíveis na OMEGA Seguros;
+>
+>Média dos valores dos planos por operadora (calculando a média da OMEGA apenas entre os clientes que foram elegíveis);
+>
+>O maior e o menor valor de plano registrado para cada uma das duas operadoras (desconsiderando os valores de quem foi inelegível na OMEGA).
+
+### 💡 Conceitos praticados:
+- **Modularização (Funções):** Criação de funções personalizadas com `def` para isolar as regras de negócio de cada operadora.
+- **Retorno Múltiplo de Dados:** Funções retornando mais de uma informação simultaneamente (`valor` e `status de elegibilidade`).
+- **Lógica Estatística Avançada:** Controle de fluxo para descobrir médias, maiores e menores valores de forma independente para cada empresa, tratando exceções (clientes inelegíveis).
