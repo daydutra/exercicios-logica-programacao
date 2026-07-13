@@ -122,13 +122,7 @@ Este repositório contém a resolução dos exercícios práticos passados pelo 
 ### 💡 Conceitos praticados:
 - **Modularização (Funções):** Criação de funções personalizadas com `def` para isolar as regras de negócio de cada operadora.
 - **Retorno Múltiplo de Dados:** Funções retornando mais de uma informação simultaneamente (`valor` e `status de elegibilidade`).
-- **Lógica Estatística Avançada:** Controle de fluxo para descobrir médias, maiores e menores valores de forma independente para cada empresa, tratando exceções (clientes inelegíveis).
-
-# Exercício: Análise e Classificação de Triângulos (em Python)
-
-**Instituição:** Instituto Federal Sudeste de Minas Gerais – Campus Barbacena  
-**Curso:** Curso Técnico em Informática  
-**Disciplina:** Lógica de Programação I  
+- **Lógica Estatística Avançada:** Controle de fluxo para descobrir médias, maiores e menores valores de forma independente para cada empresa, tratando exceções (clientes inelegíveis).  
 
 ---
 
