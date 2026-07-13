@@ -1,7 +1,7 @@
 '''
 Sistema de Orçamento de Planos de Saúde
-Autor(a): Dayane Dutra
-Última Modificação: 05/07/2026
+Autor(a): Dayane Dutra (1° Período - Técnico em Informática)
+Última Modificação: 13/07/2026
 Contato: dutra007@proton.me
 '''
 
@@ -63,6 +63,8 @@ def omega_seguros(renda_mensal, sexo, idade, anos_contribuicao, numero_internaco
     
     valor_base = renda_mensal * PERCENTUAL_VALOR_BASE
 
+    valor_plano = valor_base
+
     if sexo == CODIGO_SEXO_FEMININO:
         total_percentual_desconto = PERCENTUAL_DESCONTO_SEXO_FEMININO
     
@@ -103,10 +105,10 @@ total_clientes_inelegiveis_omega = 0
 soma_valores_vita = 0
 total_clientes_elegiveis_omega = 0
 soma_valores_omega = 0
-maior_valor_vita = True
-menor_valor_vita = True
-maior_valor_omega = True
-menor_valor_omega = True
+maior_valor_vita = None
+menor_valor_vita = None
+maior_valor_omega = None
+menor_valor_omega = None
 
 print('1 - Feminino\n2 - Masculino\nOutro Valor - Encerrar Programa')
 sexo = int(input('Digite o código referente ao sexo do cliente ou outro valor para encerrar o programa: '))
@@ -134,7 +136,7 @@ while sexo == CODIGO_SEXO_FEMININO or sexo == CODIGO_SEXO_MASCULINO:
     numero_internacoes = int(input('Digite o número de internações hospitalares do cliente nos últimos 3 anos: '))
 
     while numero_internacoes < NUMERO_MINIMO_INTERNACOES:
-        print('Número de Internações inválido. Digite um valor maior ou igual a 0 (zero): ')
+        print('Número de Internações inválido. Digite um valor maior ou igual a 0 (zero).')
         numero_internacoes = int(input('Digite o número de internações hospitalares do cliente nos últimos 3 anos: '))
 
     valor_plano_vita = vita_saude(renda_mensal, idade, anos_contribuicao, numero_internacoes)
@@ -153,13 +155,14 @@ while sexo == CODIGO_SEXO_FEMININO or sexo == CODIGO_SEXO_MASCULINO:
         total_clientes_elegiveis_omega += 1
         soma_valores_omega += valor_plano_omega
 
-        if total_clientes_elegiveis_omega == PRIMEIRO_CLIENTE_ELEGIVEL_OMEGA:
+        if maior_valor_omega is None:
             maior_valor_omega = valor_plano_omega
             menor_valor_omega = valor_plano_omega
-        elif valor_plano_omega > maior_valor_omega:
-            maior_valor_omega = valor_plano_omega
-        elif valor_plano_omega < menor_valor_omega:
-            menor_valor_omega = valor_plano_omega
+        else:
+            if valor_plano_omega > maior_valor_omega:
+                maior_valor_omega = valor_plano_omega
+            if valor_plano_omega < menor_valor_omega:
+                menor_valor_omega = valor_plano_omega
     
     print('--' * 50)
 
@@ -167,13 +170,14 @@ while sexo == CODIGO_SEXO_FEMININO or sexo == CODIGO_SEXO_MASCULINO:
 
     soma_valores_vita += valor_plano_vita
 
-    if total_clientes_processados == PRIMEIRO_CLIENTE_PROCESSADO:
+    if maior_valor_vita is None:
         maior_valor_vita = valor_plano_vita
         menor_valor_vita = valor_plano_vita
-    elif valor_plano_vita > maior_valor_vita:
-        maior_valor_vita = valor_plano_vita
-    elif valor_plano_vita < menor_valor_vita:
-        menor_valor_vita = valor_plano_vita
+    else:
+        if valor_plano_vita > maior_valor_vita:
+            maior_valor_vita = valor_plano_vita
+        if valor_plano_vita < menor_valor_vita:
+            menor_valor_vita = valor_plano_vita
 
     print('1 - Feminino\n2 - Masculino\nOutro Valor - Encerrar Programa')
     sexo = int(input('Digite o código referente ao sexo do cliente ou outro valor para encerrar o programa: '))

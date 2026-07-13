@@ -154,8 +154,7 @@ Este repositório contém a resolução dos exercícios práticos passados pelo 
 
 ---
 
-## 🧠 Conceitos Praticados
-
+## 💡 Conceitos praticados:
 - **Modularização e Funções:** Criação de função personalizada (`calcula_triangulo`) com retorno de múltiplos valores e documentação via *docstrings*.
 - **Estruturas de Decisão:** Aplicação de `if`, `elif` e `else` para classificação geométrica (triângulos equiláteros, escalenos e isósceles) e prevenção de redundâncias lógicas.
 - **Estruturas de Repetição:** Utilização de laços `while` para validação de dados de entrada e controle de fluxo do programa.

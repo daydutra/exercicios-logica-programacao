@@ -110,7 +110,7 @@ if total_triangulos >= PRIMEIRO_TRIANGULO_LIDO:
         print('Nenhum triângulo escaleno foi lido.')
 
     if maior_area_equilatero is not None:
-        print(f'Maior Área - Equilátero: {maior_area_equilatero:.1f} m\nMenor Área - Equilátero: {menor_area_equilatero:.1f} m')
+        print(f'Maior Área - Equilátero: {maior_area_equilatero:.1f} m2\nMenor Área - Equilátero: {menor_area_equilatero:.1f} m2')
     else:
         print('Nenhum triângulo equilátero foi lido.')
 
@@ -121,7 +121,7 @@ if total_triangulos >= PRIMEIRO_TRIANGULO_LIDO:
 
     print(f'Média dos Perímetros: {soma_perimetros / total_triangulos:.1f} m')
 
-    print(f'Soma das Áreas: {soma_areas:.1f} m')
+    print(f'Soma das Áreas: {soma_areas:.1f} m2')
 
 else:
     print('--' * 50)

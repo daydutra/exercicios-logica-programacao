@@ -1,7 +1,7 @@
 '''
 Sistema de Triagem do Centro de Resgate Ambiental
-Autor(a): Dayane Dutra
-Última Modificação: 04/07/2026
+Autor(a): Dayane Dutra (1° Período - Técnico em Informática)
+Última Modificação: 13/07/2026
 Contato: dutra007@proton.me
 '''
 
@@ -45,7 +45,7 @@ while tipo_animal >= CODIGO_AVE and tipo_animal <= CODIGO_ONCA_PARDA:
         nivel_urgencia = int(input('Digite o código referente ao nível de urgência do atendimento: '))
         
         while nivel_urgencia < CODIGO_URGENCIA_BAIXO or nivel_urgencia > CODIGO_URGENCIA_ALTO:
-            print('Cógido inválido. Forneça um número dentre as opções disponíveis.')
+            print('Código inválido. Forneça um número dentre as opções disponíveis.')
             print('1 - Baixo\n2 - Médio\n3 - Alto\n')
             nivel_urgencia = int(input('Digite o código referente ao nível de urgência do atendimento: '))
     
