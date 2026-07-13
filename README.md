@@ -123,3 +123,49 @@ Este repositório contém a resolução dos exercícios práticos passados pelo 
 - **Modularização (Funções):** Criação de funções personalizadas com `def` para isolar as regras de negócio de cada operadora.
 - **Retorno Múltiplo de Dados:** Funções retornando mais de uma informação simultaneamente (`valor` e `status de elegibilidade`).
 - **Lógica Estatística Avançada:** Controle de fluxo para descobrir médias, maiores e menores valores de forma independente para cada empresa, tratando exceções (clientes inelegíveis).
+
+# Exercício: Análise e Classificação de Triângulos (em Python)
+
+**Instituição:** Instituto Federal Sudeste de Minas Gerais – Campus Barbacena  
+**Curso:** Curso Técnico em Informática  
+**Disciplina:** Lógica de Programação I  
+
+---
+
+## 📑 Exercício: Análise e Classificação de Triângulos
+
+**Enunciado:**
+>Um triângulo é uma figura geométrica plana formada por três segmentos de reta (a, b, c). Para que três valores formem um triângulo válido, é **obrigatório** que a medida de qualquer um dos lados seja estritamente menor que a soma das medidas dos outros dois.
+>
+>### Classificação dos Triângulos:
+>- **Equilátero:** Todos os 3 lados são iguais.
+>- **Isósceles:** Apenas 2 lados são iguais.
+>- **Escaleno:** Todos os 3 lados são diferentes.
+>
+>## 🎯 Objetivo
+>
+>Desenvolva um programa na linguagem **Python** que leia sucessivamente conjuntos de três valores numéricos (a, b, c) representando os lados de um triângulo. 
+>
+>O programa deve continuar lendo entradas até que o usuário informe um conjunto de três valores que **não formem um triângulo** (condição de parada).
+>
+>Ao final da execução (quando a condição de parada for atingida), o programa deve calcular e exibir:
+>
+>1. **a)** O **menor perímetro** entre os triângulos do tipo **escaleno**.
+>2. **b)** A **maior** e a **menor área** entre os triângulos do tipo **equilátero**.
+>3. **c)** A **quantidade total** de triângulos do tipo **isósceles**.
+>4. **d)** A **média dos perímetros** de todos os triângulos válidos lidos.
+>5. **e)** A **soma das áreas** de todos os triângulos válidos lidos.
+>
+>⚠️ **Atenção:** O término da entrada de dados é identificado no momento em que os três valores (a, b, c) **não** formarem um triângulo. Esse triângulo inválido não entra nos cálculos das estatísticas.
+
+---
+
+## 🧠 Conceitos Praticados
+
+- **Modularização e Funções:** Criação de função personalizada (`calcula_triangulo`) com retorno de múltiplos valores e documentação via *docstrings*.
+- **Estruturas de Decisão:** Aplicação de `if`, `elif` e `else` para classificação geométrica (triângulos equiláteros, escalenos e isósceles) e prevenção de redundâncias lógicas.
+- **Estruturas de Repetição:** Utilização de laços `while` para validação de dados de entrada e controle de fluxo do programa.
+- **Validação de Dados:** Garantia de integridade de dados (verificando se os lados formam um triângulo válido e impedindo valores menores ou iguais a zero).
+- **Módulos Nativos:** Uso da biblioteca `math` (`math.sqrt`) para operações matemáticas.
+- **Acumuladores e Sinalizadores (*Flags*):** Manipulação de variáveis para cálculo de totais, somatórias, médias, maiores e menores valores (usando `None` para inicialização segura).
+- **Formatação de Saída:** Uso de *f-strings* com formatação de casas decimais (`:.1f`) para exibição clara de dados.
