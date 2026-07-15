@@ -11,7 +11,7 @@ def calcula_triangulo(a, b, c):
 
     '''
     Função que recebe como parâmetro 3 medidas de lados e verifica se formam um triângulo.
-    Em caso positivo, calcula o perímetro, a área e classifica o triângulo em equilátero, escaleno ou isósceles;
+    Em caso positivo, calcula o perímetro e a área, classifica o triângulo em equilátero, escaleno ou isósceles
     e retorna "True" indicando que as medidas fornecidas formam um triângulo, o tipo de triângulo, o perímetro e a área.
     Em caso negativo, retorna "False" indicando que as medidas fornecidas não formam um triângulo e "None" para os demais valores.
     '''
@@ -81,6 +81,7 @@ while forma_triangulo == True:
         else:
             if area > maior_area_equilatero:
                 maior_area_equilatero = area
+                
             if area < menor_area_equilatero:
                 menor_area_equilatero = area
 
